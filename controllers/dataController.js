@@ -19,7 +19,9 @@ exports.createString = async (req, res) => {
     const sha256Hash = Helper.generateSHA256(value);
 
     // Check if string already exists (409 Conflict)
-    const existingString = await Hngdata.findOne({ 'properties.sha256_hash': sha256Hash });
+    // const existingString = await Hngdata.findOne({ 'properties.sha256_hash': sha256Hash });
+    
+    const existingString = await Hngdata.findOne({ value: value });
     if (existingString) {
       return res.status(409).json({ error: 'String already exists in the system' });
     }

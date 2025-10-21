@@ -311,7 +311,7 @@ Case-insensitive checking that ignores spaces:
 ### Character Frequency Map
 Counts occurrences of each character:
 ```json
-"hello" → {
+"hello" => {
   "h": 1,
   "e": 1,
   "l": 2,
